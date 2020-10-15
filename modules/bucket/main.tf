@@ -76,3 +76,5 @@ resource "google_storage_bucket_iam_member" "storage_bucket_iam_member" {
   role   = var.service_account_bucket_role
   member = "serviceAccount:${google_service_account.storage_bucket_service_account[0].email}"
 }
+
+#My forky change
