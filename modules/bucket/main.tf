@@ -7,6 +7,7 @@ provider "google" {
   project = var.gcp_project
 }
 
+//adding another bucket
 resource "google_storage_bucket" "my-module-yesyes" {
   name          = "module-testing-bucket-${random_id.suffix2.hex}"
   location      = var.location
@@ -48,6 +49,10 @@ resource "random_id" "suffix" {
 }
 
 resource "random_id" "suffix2" {
+  byte_length = 2
+}
+
+resource "random_id" "suffix3" {
   byte_length = 2
 }
 
