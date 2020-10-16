@@ -7,6 +7,12 @@ provider "google" {
   project = var.gcp_project
 }
 
+resource "google_storage_bucket" "my-module-yesyes" {
+  name          = "module-testing-bucket-${random_id.suffix2.hex}"
+  location      = var.location
+  force_destroy = var.force_destroy
+}
+
 # https://www.terraform.io/docs/providers/google/r/storage_bucket.html
 resource "google_storage_bucket" "storage_bucket" {
   name               = length(var.bucket_instance_custom_name) > 0 ? var.bucket_instance_custom_name : "${var.labels.app}-${random_id.suffix.hex}"
