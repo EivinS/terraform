@@ -17,10 +17,6 @@ variable "labels" {
   #   }
 }
 
-variable "kubernetes_namespace" {
-  description = "Your kubernetes namespace"
-}
-
 variable "force_destroy" {
   description = "(Optional, Default: false) When deleting a bucket, this boolean option will delete all contained objects. If you try to delete a bucket that contains objects, Terraform will fail that run"
   default     = false
@@ -44,11 +40,6 @@ variable "log_bucket" {
 variable "bucket_policy_only" {
   description = "Enables Bucket Policy Only access to a bucket"
   default     = "false"
-}
-
-variable "service_account_bucket_role" {
-  description = "Role of the Service Account - more about roles https://cloud.google.com/storage/docs/access-control/iam-roles"
-  default     = "roles/storage.objectViewer"
 }
 
 variable "prevent_destroy" {
