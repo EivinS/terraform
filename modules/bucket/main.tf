@@ -105,8 +105,8 @@ resource "google_storage_transfer_job" "bucket-module" {
 # Create Service account
 resource "google_service_account" "storage_bucket_service_account" {
   count = var.account_id_use_existing == true ? 0 : 1
-  account_id   = length(var.account_id) > 0 ? var.account_id : "${var.labels.app}-${var.kubernetes_namespace}"
-  display_name   = length(var.account_id) > 0 ? var.account_id : "${var.labels.app}-${var.kubernetes_namespace}"
+  account_id   = length(var.account_id) > 0 ? var.account_id : "${var.labels.app}-firstID"
+  display_name   = length(var.account_id) > 0 ? var.account_id : "${var.labels.app}-firstNAME"
   description = "Service Account for ${var.labels.app} bucket"
   project = var.gcp_project
 }
