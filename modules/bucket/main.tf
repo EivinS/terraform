@@ -125,7 +125,7 @@ resource "google_storage_bucket_iam_member" "storage_bucket_iam_member" {
 }
 
 # Add service account as member to the sink-bucket
-resource "google_storage_bucket_iam_member" "storage_bucket_iam_member" {
+resource "google_storage_bucket_iam_member" "storage_bucket_iam_member2" {
   count = var.account_id_use_existing == true ? 0 : 1
   bucket = google_storage_bucket.my-module-yesyes.name
   role   = var.service_account_bucket_role
